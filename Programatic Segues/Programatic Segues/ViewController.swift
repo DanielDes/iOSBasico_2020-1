@@ -10,10 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var `switch`: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        guard let name = User.currentUser?.name else {return}
+        let greeting = "Hi " + name
+        self.greetingLabel.text = greeting
+    }
+    @IBAction func logOut(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func goToYellow(_ sender: Any) {
         if self.switch.isOn {
