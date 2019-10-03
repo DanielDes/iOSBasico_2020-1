@@ -19,7 +19,7 @@ class ContactsViewController: UICollectionViewController,UIImagePickerController
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return people.count
+        return 10
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -31,17 +31,17 @@ class ContactsViewController: UICollectionViewController,UIImagePickerController
             fatalError("Unable to dequeue cell ")
         }
         
-        let person = people[indexPath.row]
-        cell.nameLabel.text = person.name
-        
-        let path = getDocumentsDirectory().appendingPathComponent(person.image)
-        cell.personImageView.image = UIImage(contentsOfFile: path.path)
-        
-        cell.personImageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
-        cell.personImageView.layer.borderWidth = 2
-        cell.personImageView.layer.cornerRadius = 3
-        cell.layer.cornerRadius = 7
-        
+//        let person = people[indexPath.row]
+//        cell.nameLabel.text = person.name
+//
+//        let path = getDocumentsDirectory().appendingPathComponent(person.image)
+//        cell.personImageView.image = UIImage(contentsOfFile: path.path)
+//
+//        cell.personImageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
+//        cell.personImageView.layer.borderWidth = 2
+//        cell.personImageView.layer.cornerRadius = 3
+//        cell.layer.cornerRadius = 7
+        cell.nameLabel.text = "1"
         
         return cell
     }
